@@ -1,5 +1,5 @@
 {
-	"name": "framework-ui-kit",
+	"name": "fetch-api-react",
 	"version": "1.0.7",
 	"main": "./dist/index.js",
 	"author": "Mario Magomedov",
