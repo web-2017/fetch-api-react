@@ -33,6 +33,7 @@ class FetchApi {
 			putApi({ url, body, id, headers? })
 			patchApi({ url, body, id, headers? })
 			deleteApi({ url, id, headers? })
+			filterApi({ url, params, headers? })
 		`)
 	}
 
