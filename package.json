@@ -1,6 +1,6 @@
 {
 	"name": "fetch-api-react",
-	"version": "1.0.7",
+	"version": "1.0.1",
 	"main": "./dist/index.js",
 	"author": "Mario Magomedov",
 	"license": "MIT",
@@ -27,8 +27,10 @@
 		"url": "https://github.com/web-2017/fetch-api-react.git"
 	},
 	"keywords": [
-		"test",
-		"test1"
+		"fetch",
+		"fetch-api",
+		"rest",
+		"rest-api"
 	],
 	"peerDependencies": {
 		"react": "*",
