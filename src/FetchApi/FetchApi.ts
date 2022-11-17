@@ -11,6 +11,10 @@ export interface IFetchByIdApiProps extends IFetchApiProps {
 export interface IFetchPostProps extends IFetchApiProps {
 	body: object
 }
+export interface IFetchPutProps extends IFetchApiProps {
+	body: object
+	id: string
+}
 
 const defaultHeaders = { 'Content-type': 'application/json; charset=UTF-8' }
 
@@ -18,7 +22,8 @@ class FetchApi {
 	seeAllMethods() {
 		return console.info(`
 			getApi({ url, headers })
-			getByIdApi({ url, id, headers })
+			getByIdApi({ url, id, headers? })
+			postApi({ url, body, headers? })
 		`)
 	}
 	getApi({ url, headers }: IFetchApiProps) {
@@ -75,6 +80,40 @@ class FetchApi {
 		}
 		return fetch(`${url}`, {
 			method: 'POST',
+			headers: headers ? { ...headers } : defaultHeaders,
+			body: JSON.stringify({ ...body }),
+		})
+			.then((docJson: any) => docJson.json())
+			.then((data: any) => data)
+			.catch((error: any) => console.error(error))
+	}
+	putApi({ url, id, headers, body }: IFetchPutProps) {
+		if (!url) {
+			console.log(
+				'Url is required!!!, Example: getByIdApi({ url: "http://google.com" }'
+			)
+			return
+		}
+
+		if (!id) {
+			console.log('Id is required!!!, Example: getByIdApi({ id: 1 }')
+			return
+		}
+
+		if (typeof body !== 'object') {
+			console.log(
+				'body must be an object!!!, Example: body: { title: "Hello world", firstName: John}'
+			)
+			return
+		}
+		if (!body) {
+			console.log(
+				'body object is required!!!, Example: getByIdApi({ body: {title: hello} }'
+			)
+			return
+		}
+		return fetch(`${url}`, {
+			method: 'PUT',
 			headers: headers ? { ...headers } : defaultHeaders,
 			body: JSON.stringify({ ...body }),
 		})
