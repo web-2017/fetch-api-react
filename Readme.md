@@ -36,15 +36,15 @@ get data by id:
     const [users, setUsers] = useState([])
     const [user, setUser] = useState(null)
 
-	useEffect(() => {
+    useEffect(() => {
         const getFetch = async () => {
             const allUsers = await getApi({ url: URL })
             const user = await getByIdApi({ url: URL, id: 3 })
             setUsers([allUsers]) // all users
             setUser(user) // one user
-	    }
-		getFetch()
-	}, [])
+        }
+        getFetch()
+    }, [])
 ```
 
 # See all methods
@@ -52,12 +52,12 @@ get data by id:
 ```JavaScript
     import { seeAllMethods } from 'fetch-api-react'
 
-	useEffect(() => {
+    useEffect(() => {
         const getFetch = async () => {
-           console.log(await seeAllMethods())
-	    }
-		getFetch()
-	}, [])
+            console.log(await seeAllMethods())
+        }
+        getFetch()
+    }, [])
 ```
 
 [Home page](https://github.com/web-2017/fetch-api-react)
