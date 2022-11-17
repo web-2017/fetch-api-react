@@ -38,10 +38,10 @@ get data by id:
 
     useEffect(() => {
         const getFetch = async () => {
-            const allUsers = await getApi({ url: URL })
-            const user = await getByIdApi({ url: URL, id: 3 })
-            setUsers([allUsers]) // all users
-            setUser(user) // one user
+            const getAllUsers = await getApi({ url: URL })
+            const getUser = await getByIdApi({ url: URL, id: 3 })
+            setUsers([getAllUsers]) // all users
+            setUser(getUser) // one user
         }
         getFetch()
     }, [])
