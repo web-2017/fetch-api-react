@@ -61,3 +61,4 @@ get data by id:
 ```
 
 [Home page](https://github.com/web-2017/fetch-api-react)
+[Npm page](https://www.npmjs.com/package/fetch-api-react)
