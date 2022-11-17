@@ -1,9 +1,23 @@
-import api from './FetchApi/FetchApi'
+import {
+	getApi,
+	getByIdApi,
+	api,
+	seeAllMethods,
+	postApi,
+	putApi,
+	deleteApi,
+	patchApi,
+	filterApi,
+} from './FetchApi/FetchApi'
 
-const getApi = api.getApi
-const getByIdApi = api.getByIdApi
-const seeAllMethods = api.seeAllMethods
-const postApi = api.postApi
-const putApi = api.putApi
-
-export { getApi, getByIdApi, api, seeAllMethods, postApi, putApi }
+export {
+	getApi,
+	getByIdApi,
+	api,
+	seeAllMethods,
+	postApi,
+	putApi,
+	deleteApi,
+	patchApi,
+	filterApi,
+}
